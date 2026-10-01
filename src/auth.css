@@ -1,0 +1,69 @@
+/* Shared by the /login and /register screens. Lifted from the <style> blocks
+   the standalone login.html / register.html files used to carry. */
+
+.auth-screen {
+  position: relative;
+  display: flex;
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.auth-column {
+  box-sizing: border-box;
+  width: min(26rem, 100%);
+  min-height: 100vh;
+  margin-left: 10rem;
+  padding: 0 1.5rem 2rem;
+  background-color: rgba(128, 128, 128, 0.422);
+  text-align: center;
+}
+
+.auth-screen h1 {
+  margin: 0 2rem;
+  padding-top: 2rem;
+}
+
+.auth-screen form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 8rem;
+  gap: 1rem;
+}
+
+.auth-screen input {
+  cursor: pointer;
+  padding: 0.3rem;
+}
+
+.auth-screen button {
+  cursor: pointer;
+  padding: 0.4rem;
+}
+
+.auth-hint {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
+
+.auth-error {
+  color: #ffdddd;
+  min-height: 1.2rem;
+  margin-top: 0.75rem;
+  font-weight: bold;
+}
+
+.auth-column > a {
+  color: #ffffff;
+}
+
+@media (max-width: 700px) {
+  .auth-column {
+    margin-left: 0;
+  }
+
+  .auth-screen form {
+    margin-top: 4rem;
+  }
+}

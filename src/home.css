@@ -1,0 +1,245 @@
+/* Landing screen reached at "/". Shares the auth screen's photo and card layout so the
+   signed-out and signed-in entry points look like one game. */
+
+.home-screen {
+  box-sizing: border-box;
+  display: flex;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  color: #eaf6f8;
+  background-color: #0d2b33;
+  background-position: center;
+  background-size: cover;
+}
+
+.home-column {
+  box-sizing: border-box;
+  width: min(30rem, 100%);
+  margin-left: clamp(0rem, 6vw, 8rem);
+  padding: 2rem 1.75rem 2.5rem;
+  border-radius: 10px;
+  background-color: rgba(13, 43, 51, 0.72);
+  backdrop-filter: blur(2px);
+}
+
+.home-kicker {
+  margin: 0;
+  color: #7fd8c8;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  margin: 6px 0 8px;
+  font-size: clamp(32px, 6vw, 44px);
+  letter-spacing: -0.02em;
+}
+
+.home-tagline {
+  margin: 0;
+  color: #b9d6db;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 2.25rem;
+}
+
+.home-play,
+.home-secondary {
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-play {
+  color: #fff;
+  background-color: #0f766e;
+  box-shadow: 0 6px 18px rgba(15, 118, 110, 0.35);
+}
+
+.home-play:hover {
+  background-color: #0c5f59;
+}
+
+.home-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #dcedf0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.home-secondary:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.home-secondary:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.home-soon {
+  color: #8fb3b9;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.home-options {
+  margin-top: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.home-options .home-note {
+  margin: 0;
+}
+
+.home-options-links {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.home-options-links a,
+.home-link-btn {
+  color: #7fd8c8;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home-link-btn {
+  margin-top: 10px;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.home-options-links a:hover,
+.home-link-btn:hover {
+  text-decoration: underline;
+}
+
+.home-scoreboard {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.home-scoreboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.home-scoreboard-head h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.home-refresh {
+  padding: 5px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  color: #dcedf0;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.home-refresh:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.home-refresh:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.home-note {
+  margin: 12px 0 0;
+  color: #b9d6db;
+  font-size: 13px;
+}
+
+.home-note-error {
+  color: #ffc9c2;
+}
+
+.home-leaders {
+  margin: 12px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-leader {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.home-leader + .home-leader {
+  margin-top: 6px;
+}
+
+.home-rank {
+  flex: 0 0 auto;
+  min-width: 1.6rem;
+  color: #7fd8c8;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.home-leader-name {
+  flex: 1;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-leader-money {
+  flex: 0 0 auto;
+  color: #ffd479;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .home-screen {
+    padding: 0;
+  }
+
+  .home-column {
+    width: 100%;
+    min-height: 100vh;
+    margin-left: 0;
+    border-radius: 0;
+  }
+}
